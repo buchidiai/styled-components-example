@@ -1,25 +1,52 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import styled from "styled-components";
+
+const Container = styled.div`
+  text-align: center;
+`;
+
+const Header = styled.header`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+const Img = styled.img`
+  height: 40vmin;
+  pointer-events: none;
+`;
+
+const P = styled.p`
+  &:hover {
+    color: red;
+  }
+`;
+
+const A = styled.a`
+  color: #61dafb;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+    <Container>
+      <Header>
+        <Img src={logo} alt="logo" />
+
+        <P>
           Edit <code>src/App.js</code> and save to HI.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </P>
+        <A href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
-        </a>
-      </header>
-    </div>
+        </A>
+      </Header>
+    </Container>
   );
 }
 
